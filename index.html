@@ -38,7 +38,7 @@
                 <div class="nav-heading">
                     <ul class="outer-heading-ul">
                         <li><object class="nav-logo-svg" data="img/svg_logo_80x80.svg"></object></li>
-                        <li><object class="nav-menuicon-svg" data="img/svg_icon-menu-thin_18x18.svg"></object></li>
+                        <li><object class="nav-menuicon-svg navToggleButton" data="img/svg_icon-menu-thin_18x18.svg"></object></li><!--[TASK]: use javascript to trigger the reveal of the nav at mobile size-->
                         <li>
                             <ul class="inner-heading-ul">
                                 <li><object class="nav-name-svg" data="img/svg_dulockwood-name-precise_172x14.svg"></object></li>
@@ -47,10 +47,12 @@
                         </li>
                     </ul>
                 </div>
-                <div class="nav-links"><!--[TASK]: change display value for desktop with @media 1024px-->
+                <div id="nav-links-overlay" class="nav-links"><!--[TASK]: change display value for desktop with @media 1024px-->
+                    <!--button to close nav-->
                     <div class="nav-links-content">
                     <div class="ul-wrapper">
                         <ul class="pagenav"><!--[TASK]: Assure links are live-->
+                            <li><object class="nav-menuclose-svg navToggleButton" data="img/svg_icon-menuclose_24x24.svg"></object></li><!--This is the X-->
                             <li><div class="link-container"><a href="about.html" class="hyperlink">About</a></div></li>
                             <li><div class="link-container"><a href="index.html" class="hyperlink-currentpage">Portfolio</a></div></li>
                             <li><div class="link-container"><a href="resume.html" class="hyperlink">Resume</a></div></li>
@@ -73,18 +75,34 @@
         <div class="content">
             <div class="flex-grid"> <!--row 1-->
                 <div class="col" style="background-color:#cccccc;">
-                    I am boxxy, you see?
+                    <a href="">
+                        <img class="img-scale"
+                            srcset="img/portfolio-icon_admt_1280x1280.jpg 3x, img/portfolio-icon_admt_960x960.jpg 2x"
+                            src="img/portfolio-icon_admt_480x480.jpg" alt="ADMiT">
+                    </a>
                 </div>
                 <div class="col" style="background-color:#cccccc;">
-                    I am boxxy, you see?
+                    <a href="">
+                        <img class="img-scale"
+                            srcset="img/portfolio-icon_ncsa_1280x1280.jpg 3x, img/portfolio-icon_ncsa_960x960.jpg 2x"
+                            src="img/portfolio-icon_ncsa_480x480.jpg" alt="North Carolina Society for Anesthesiologists">
+                    </a>
                 </div>
             </div><!--end ".flex-grid"--> <!--end row 1-->
             <div class="flex-grid"> <!--row 2-->
                 <div class="col" style="background-color:#cccccc;">
-                    HARAMBE?!
+                    <a href="">
+                        <img class="img-scale"
+                            srcset="img/portfolio-icon_s4p_1280x1280.png 3x, img/portfolio-icon_s4p_960x960.png 2x"
+                            src="img/portfolio-icon_s4p_480x480.png" alt="Bernie For President">
+                    </a>
                 </div>
                 <div class="col" style="background-color:#cccccc;">
-                    HARAMBE?!
+                    <a href="">
+                        <img class="img-scale"
+                            srcset="img/portfolio-icon_dth_1280x1280.jpg 3x, img/portfolio-icon_dth_960x960.jpg 2x"
+                            src="img/portfolio-icon_dth_480x480.jpg" alt="The Daily Tar Heel Infographic">
+                    </a>
                 </div>
             </div><!--end ".flex-grid"--> <!--end row 2-->
             <div class="flex-grid"> <!--row 3-->
@@ -107,9 +125,8 @@
     </div><!--end ".container"-->
     
     <script src="js/jquery-3.1.1.min.js" charset="utf-8"></script>
-    <script src="js/vendor/what-input.js"></script><!--Foundation 6 file-->
-    <script src="js/vendor/foundation.js"></script>
-    <script src="js/app.js"></script>
+    <!--<script src="js/vendor/what-input.js"></script>--><!--Foundation 6 file-->
+    <!--<script src="js/vendor/foundation.js"></script>-->
     <script src="js/main.js" charset="utf-8"></script>
 </body>
 </html>
