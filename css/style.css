@@ -34,6 +34,10 @@ a.svg:after {
         text-decoration: line-through;
 }
 
+img {
+    vertical-align: middle;
+}
+
 
 /* NAV Component
      ========================================================================== */
@@ -51,6 +55,7 @@ nav {
         min-width: 100%;
         position: fixed;
         top: 0;
+        z-index: 2;
 }
 
 .nav-heading .outer-heading-ul{
@@ -309,7 +314,7 @@ nav {
         .nav-name-svg { /*title name*/
             height: 20px;
         }
-}
+}/*end @media 768*/
 
 @media (min-width: 1024px) {
         .nav-content {
@@ -352,13 +357,13 @@ nav {
             height: 84px;
             width: auto;
         }
-}
+}/*end @media 1024*/
 
 @media (min-width: 1280px) {
         .nav-content-background {
             width: 426px;
         }
-}
+}/*end @media 1280*/
 
 @media (min-width: 1920px) { /*big fuggin monitors*/
         .nav-content-background {
@@ -391,13 +396,14 @@ nav {
             height: 12.5px;
             width: auto;
         }
-}
+}/*end @media 1920*/
 
 @media (min-width: 2560px) { /*really big fuggin monitors*/
         .nav-content-background {
             width: 853px;
         }
-}
+}/*end @media 2560*/
+
 /* ========================================================================== */
 
 
@@ -429,6 +435,9 @@ nav {
         .content {
             margin-top: 200px;
         }
+        .content-portfolio {
+            margin-top: 188px;
+        }
         .flex-grid {
             display: flex;
             justify-content: center;
@@ -445,15 +454,14 @@ nav {
         .flex-grid .col:nth-child(1) {
             margin-right: 12px;
         }
-}
+}/*end @media 768*/
 
 @media (min-width: 1024px) {
         .content {
             margin-left: 342px; /*change if the nav component is set to variable width*/
             margin-top: 12px;
         }
-
-}
+}/*end @media 1024*/
 
 @media (min-width: 1280px) {
         .content {
@@ -464,7 +472,7 @@ nav {
             max-height: 400px;
             max-width: 400px;
         }
-}
+}/*end @media 1280*/
 
 @media (min-width: 1440px) {
         .flex-grid .col {
@@ -472,23 +480,271 @@ nav {
             max-height: 480px;
             max-width: 480px;
         }
-}
+}/*end @media 768*/
 
 @media (min-width: 1920px) {
         .content {
             margin-left: 640px;
         }
-}
+}/*end @media 1920*/
 
 @media (min-width: 2560px) {
         .content {
             margin-left: 853px;
         }
-}
+}/*end @media 2560*/
 
 /* ========================================================================== */
 
+/* PORTFOLIO PAGE CONTENT Component
+     ========================================================================== */
 
+/*.banner {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: -100%;
+        right: -100%;
+        margin: auto;
+        height: 240px;
+        width:504px;
+}*/
+
+.banner {
+        height: 240px;
+        width: auto;
+        position: absolute;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        top: -9999px;
+        margin: auto;
+}
+
+.banner-helper {
+        height: 240px;
+        max-width: 100%;
+        overflow: hidden;
+        position: relative;
+}
+
+.banner-wrapper {
+        position: absolute;
+        bottom: -9999px;
+        left: -9999px;
+        right: -9999px;
+        top: -9999px;
+        margin: auto;
+}
+
+.border {
+        border: 1px solid #cccccc;
+}
+
+.cell {
+        display: flex;
+            justify-content: center;
+        margin-left: 12px;
+        margin-right: 12px;
+}
+
+.content-intro {
+        margin-left: 24px;
+        margin-right: 24px;
+        margin-top: 48px;
+}
+
+.content-main {
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 960px;
+}
+
+.content-portfolio {
+        margin-top: 48px;
+}
+
+.content-section {
+        align-self: center; /*works with display:flex on ".cell"*/
+        max-width: 480px;
+        padding-left: 12px;
+        padding-right: 12px;
+        padding-top: 24px;
+}
+
+.divider {
+        display: block; /*allows for margin:auto*/
+        margin: 42px auto 48px auto;
+}
+
+.portfolio-image {
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 480px;
+}
+
+.text-body {
+        color: #5f5e5d;
+        font-family: Bodoni-Roman;
+        font-size: 14px;
+        line-height: 26px;
+        margin-bottom: 0;
+        margin-top: 0;
+}
+
+.text-description {
+        color: #5f5e5d;
+        font-family: Bodoni-Roman;
+        font-size: 14px;
+        line-height: 26px;
+        margin-bottom: 0;
+        margin-top: 0;
+}
+
+.text-heading {
+        color: #212121;
+        font-family: NeueHaasGroteskDisp-Bold;
+        font-size: 20px;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+        margin-top: 0;
+}
+
+.text-subheading {
+        color: #5f5e5d;
+        font-family: NeueHaasGroteskDisp-Bold;
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        margin-top: 0;
+}
+
+.text-title {
+        color: #212121;
+        font-family: NeueHaasGroteskDisp-Bold;
+        font-size: 17px;
+        letter-spacing: 1px;
+        line-height: 19px;
+        margin-bottom: 12px;
+        margin-top: 0;
+}
+
+.text-subheading span {
+        font-family: NeueHaasGroteskText-Italic;
+}
+
+@media (min-width: 400px) {
+        .content-intro {
+            max-width: 480px;
+        }
+        .text-body, .text-description {
+            font-size: 16px;
+            line-height: 30px;
+        }
+        .text-heading {
+            font-size: 28px;
+            line-height: 28px;
+            margin-bottom: 4px;
+        }
+        .text-subheading {
+            font-size: 13px;
+        }
+        .text-title {
+            
+        }
+}
+
+@media (min-width: 528px) {
+        .content-intro, .content-section {
+            margin-left: auto;
+            margin-right: auto;
+        }
+}
+
+@media (min-width: 768px) {
+        .banner {
+            height: 360px;
+            width: auto;
+        }     
+        .banner-helper {
+            height: 360px;
+        }
+        .content-intro {
+            margin-top: 72px;
+        }
+        .content-portfolio {
+            margin-top: 188px;
+        }
+        .content-section {
+            padding-top: 0;
+        }
+        .divider {
+            margin-top: 72px;
+            margin-bottom: 72px;
+        }
+        .text-heading {
+            font-size: 32px;
+            line-height: 32px;
+        }
+        .text-body {
+            font-size: 18px;
+            line-height: 32px;
+        }
+}/*end @media 768*/
+
+@media (min-width: 1024px) {
+        .content-intro {
+            margin-top: 96px;
+        }
+        .content-portfolio {
+            margin-left: 342px; /*change if the nav component is set to variable width*/
+            margin-top: 0;
+        }
+        .divider {
+            margin-top: 96px;
+            margin-bottom: 96px;
+        }
+}/*end @media 1024*/
+
+@media (min-width: 1280px) {
+        .content-portfolio {
+            margin-left: 426px;
+        }
+        .flex-grid .col {
+            height: 400px;
+            max-height: 400px;
+            max-width: 400px;
+        }
+}/*end @media 1280*/
+
+@media (min-width: 1440px) {
+        .banner {
+            height: 480px;
+        }
+        .banner-helper {
+            height:480px;
+        }
+        .flex-grid .col {
+            height: 480px;
+            max-height: 480px;
+            max-width: 480px;
+        }
+}/*end @media 768*/
+
+@media (min-width: 1920px) {
+        .content-portfolio {
+            margin-left: 640px;
+        }
+}/*end @media 1920*/
+
+@media (min-width: 2560px) {
+        .content-portfolio {
+            margin-left: 853px;
+        }
+}/*end @media 2560*/
+
+/* ========================================================================== */
 
 object {
     display: inline-block;
@@ -505,6 +761,11 @@ ul {
 @font-face {
     font-family: NeueHaasGroteskDisp-Bold;
     src: url(../fonts/NeueHaasGroteskDisp-Bold.TTF);
+}
+
+@font-face {
+    font-family: NeueHaasGroteskText-Italic;
+    src: url(../fonts/NeueHaasGroteskText-Italic.ttf);
 }
 
 @font-face {
@@ -567,12 +828,12 @@ body {
         background-attachment: fixed;*/
     }
 
-img {
+/*img {
   max-width: 100%;
   height: auto;
   -ms-interpolation-mode: bicubic;
   display: inline-block;
-  vertical-align: middle; }
+  vertical-align: middle; }*/
 
 /* HTML5 display definitions
      ========================================================================== */
