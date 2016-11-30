@@ -13,4 +13,4 @@ $(document).ready(function() {
       }); //end fadeToggle()
     }); //end click()
 
-});//end ready()
+});//end ready

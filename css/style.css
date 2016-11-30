@@ -40,7 +40,7 @@ img {
 
 
 /* NAV Component
-     ========================================================================== */
+     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 nav {
 
@@ -404,12 +404,13 @@ nav {
         }
 }/*end @media 2560*/
 
-/* ========================================================================== */
+/* END NAV Component
+     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 
 
 /* INDEX CONTENT Component
-     ========================================================================== */
+     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 .col {
         height: 0;
@@ -494,26 +495,17 @@ nav {
         }
 }/*end @media 2560*/
 
-/* ========================================================================== */
+/* END INDEX CONTENT Component
+     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
 
 /* PORTFOLIO PAGE CONTENT Component
-     ========================================================================== */
-
-/*.banner {
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        left: -100%;
-        right: -100%;
-        margin: auto;
-        height: 240px;
-        width:504px;
-}*/
+     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
 .banner {
         height: 240px;
         width: auto;
-        position: absolute;
+        position: absolute; /*this line and below center the image within ".banner-helper" while keeping the overflow hidden*/
         bottom: -9999px;
         left: -9999px;
         right: -9999px;
@@ -522,6 +514,8 @@ nav {
 }
 
 .banner-helper {
+        background-color: #cccccc;
+        border-bottom: 1px solid #cccccc;
         height: 240px;
         max-width: 100%;
         overflow: hidden;
@@ -577,11 +571,65 @@ nav {
         margin: 42px auto 48px auto;
 }
 
+.feature {
+        max-width: 100%;
+}
+
+.feature-helper{
+        display: block;
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+.feature-wrapper {
+        margin-left: 12px;
+        margin-right: 12px;
+}
+
 .portfolio-image {
         align-self: center;
         margin-left: auto;
         margin-right: auto;
         max-width: 480px;
+}
+
+.portfolio-video {
+        align-self: center;
+        margin-left: 12px;
+        margin-right: 12px;
+        max-width: 480px;
+}
+
+.iframe-container {
+        position: relative;
+        max-width: 100%;
+        height: 0;
+        padding-bottom: 56.25%;
+}
+
+.iframe-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+}
+
+.iframe-wrapper {
+        max-width: 850px;
+        padding-left: 15px;
+        padding-right: 15px;
+        margin-bottom: 80px;
+}
+
+.project-title {
+        font-family: NeueHaasGroteskDisp-Bold;
+        font-size: 14px;
+        letter-spacing: 1px;
+        text-align: left;
+        margin-top: 0;
+        margin-bottom: 2px;
 }
 
 .text-body {
@@ -591,6 +639,10 @@ nav {
         line-height: 26px;
         margin-bottom: 0;
         margin-top: 0;
+}
+
+.text-body span {
+        font-family: Bodoni-Italic;
 }
 
 .text-description {
@@ -660,6 +712,10 @@ nav {
             margin-left: auto;
             margin-right: auto;
         }
+        .portfolio-video {
+            margin-left: auto;
+            margin-right: auto;
+        }
 }
 
 @media (min-width: 768px) {
@@ -682,6 +738,12 @@ nav {
         .divider {
             margin-top: 72px;
             margin-bottom: 72px;
+        }
+        .feature-helper {
+            margin-bottom: 48px;
+        }
+        .portfolio-video {
+            margin-bottom: 48px;
         }
         .text-heading {
             font-size: 32px;
@@ -730,9 +792,12 @@ nav {
             max-height: 480px;
             max-width: 480px;
         }
-}/*end @media 768*/
+}/*end @media 1440*/
 
 @media (min-width: 1920px) {
+        .portfolio-video {
+            max-width: 720px;
+        }
         .content-portfolio {
             margin-left: 640px;
         }
@@ -744,7 +809,306 @@ nav {
         }
 }/*end @media 2560*/
 
-/* ========================================================================== */
+/* END PORTFOLIO PAGE CONTENT Component
+     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+
+
+/* RESUME PAGE Component
+     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+.content-intro.resume {
+        margin-left: 24px;
+        margin-right: 24px;
+        margin-top: 48px;
+}
+
+.content-main.resume {
+        margin-left: 24px;
+        margin-right: 24px;
+        max-width: 960px;
+}
+
+.content-portfolio.resume {
+        margin-top: 48px;
+}
+
+.content-section.resume {
+        align-self: center; /*works with display:flex on ".cell"*/
+        margin-bottom: 48px;
+        max-width: 480px;
+        padding: 0 0 0 0;
+}
+
+.content-section.resume .text-body.resume {
+        margin-bottom: 0;
+}
+
+.content-section.resume .text-subheading.resume {
+        margin-bottom: 0;
+}
+
+.resume-pdf{
+        border-bottom: 1px solid #cccccc;
+        border-top: 1px solid #cccccc;
+        height: 48px;
+        margin-top: 48px;
+        text-align: center;
+}
+.resume-pdf .link-wrapper {
+        border-left: 1px solid #cccccc;
+        border-right: 1px solid #cccccc;
+        display: inline-block;
+        height: 48px;
+        line-height: 48px;
+        margin-left: auto;
+        margin-right: auto;
+        text-align: center;
+}
+
+.resume-pdf .link-wrapper a{
+
+        color: #5f5e5d;
+        font-family: "Bodoni-Italic";
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin-left: 24px;
+        margin-right: 24px;
+}
+
+.text-body.resume {
+        color: #5f5e5d;
+        font-family: Bodoni-Roman;
+        font-size: 14px;
+        line-height: 26px;
+        margin-bottom: 48px;
+        margin-top: 0;
+}
+
+.text-body.resume span {
+        font-family: Bodoni-Italic;
+}
+
+.text-category.resume {
+        color: #5f5e5d;
+        font-family: Bodoni-BoldItalic;
+        font-size: 16px;
+        letter-spacing: 6px;
+        line-height: 16px;
+        margin: 0 0 24px 0;
+}
+
+.text-description.resume {
+        color: #5f5e5d;
+        font-family: Bodoni-Roman;
+        font-size: 14px;
+        line-height: 26px;
+        margin-bottom: 24px;
+        margin-top: 0;
+}
+
+.text-heading.resume {
+        color: #212121;
+        font-family: NeueHaasGroteskDisp-Bold;
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin-bottom: 0;
+        margin-top: 0;
+}
+
+.text-subheading.resume {
+        color: #5f5e5d;
+        font-family: NeueHaasGroteskDisp-Bold;
+        font-size: 11px;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+        margin-top: 0;
+}
+
+.text-title.resume {
+        color: #212121;
+        font-family: NeueHaasGroteskDisp-Bold;
+        font-size: 14px;
+        letter-spacing: 1px;
+        margin-bottom: 4px;
+        margin-top: 0;
+}
+
+.text-subheading.resume span {
+        font-family: NeueHaasGroteskText-Italic;
+}
+
+@media (min-width: 400px) {
+        .content-intro.resume {
+            max-width: 480px;
+        }
+        .text-body.resume, .text-description.resume {
+            font-size: 16px;
+            line-height: 30px;
+        }
+        .text-category.resume {
+            font-size: 20px;
+            line-height: 20px;
+        }
+        .text-heading.resume, .text-title.resume {
+            font-size: 18px;
+            line-height: 20px;
+            margin-bottom: 4px;
+        }
+        .text-subheading.resume {
+            font-size: 13px;
+        }
+}
+
+@media (min-width: 528px) {
+        .content-intro.resume, .content-section.resume {
+            margin-left: auto;
+            margin-right: auto;
+        }
+}
+
+@media (min-width: 768px) {
+        .cell.resume {
+            display: flex;
+            justify-content: center;
+            margin-left: 12px;
+            margin-right: 12px;
+        }
+        .content-helper.resume {
+            display: flex;
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 72px;
+            max-width: 720px;
+        }
+        .content-intro.resume {
+            border-left: 1px solid #cccccc;
+            flex: 2 0 0;
+                -webkit-flex: 2 0 0;
+            margin-left: initial;
+            margin-right: initial;
+            margin-top: 0;
+            order: 2;
+            padding-left: 24px;
+        }
+        .content-main.resume {
+            flex: 1 0 0;
+                -webkit-flex: 1 0 0;
+            margin-left: 0;
+            order: 1;
+        }
+        .content-portfolio.resume {
+            margin-top: 188px;
+        }
+        .content-section.resume {
+            margin-left: initial;
+            margin-right: initial;
+            padding-top: 0;
+        }
+        .content-section.resume .text-category.resume {
+            text-align: right;
+        }
+        .content-section.resume .text-subheading.resume, .content-section.resume .text-body.resume {
+            text-align: right;
+        }
+        .resume-pdf {
+            margin-top: 72px;
+        }
+        .text-description.resume, .text-title.resume {
+            text-align: right;
+        }
+        
+}/*end @media 768*/
+
+@media (min-width: 1024px) {
+        .content-helper.resume {
+            display: block;
+            max-width: 480px;
+        }
+        .content-intro.resume {
+            border-left: initial;
+            display: block;
+            max-width: 480px;
+        }
+        .content-main.resume {
+            display: block;
+            margin-left: 24px;
+        }
+        .content-portfolio.resume {
+            margin-left: 342px; /*change if the nav component is set to variable width*/
+            margin-top: 0;
+        }
+        .content-section.resume .text-category.resume {
+            text-align: left;
+        }
+        .content-section.resume .text-subheading.resume, .content-section.resume .text-body.resume {
+            text-align: left;
+        }
+        .text-description.resume, .text-title.resume {
+            text-align: left;
+        }
+}/*end @media 1024*/
+
+@media (min-width: 1110px) {
+        .content-helper.resume {
+            display: flex;
+            max-width: 720px;
+        }
+        .content-intro.resume {
+            border-left: 1px solid #cccccc;
+            margin-left: initial;
+            margin-right: initial;
+        }
+        .content-main.resume {
+            margin-left: 0;
+            order: 1;
+        }
+        .content-section.resume .text-category.resume {
+            text-align: right;
+        }
+        .content-section.resume .text-subheading.resume, .content-section.resume .text-body.resume {
+            text-align: right;
+        }
+        .text-description.resume, .text-title.resume {
+            text-align: right;
+        }
+}
+
+@media (min-width: 1280px) {
+        .content-portfolio.resume {
+            margin-left: 426px;
+        }
+        .flex-grid .col {
+            height: 400px;
+            max-height: 400px;
+            max-width: 400px;
+        }
+}/*end @media 1280*/
+
+@media (min-width: 1440px) {
+        .flex-grid .col {
+            height: 480px;
+            max-height: 480px;
+            max-width: 480px;
+        }
+}/*end @media 768*/
+
+@media (min-width: 1920px) {
+        .content-portfolio.resume {
+            margin-left: 640px;
+        }
+}/*end @media 1920*/
+
+@media (min-width: 2560px) {
+        .content-portfolio.resume {
+            margin-left: 853px;
+        }
+}/*end @media 2560*/
+
+/* END RESUME PAGE Component
+     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+
 
 object {
     display: inline-block;
@@ -862,14 +1226,14 @@ summary {
    * 1. Correct `inline-block` display not defined in IE 8/9.
    * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
    */
-audio,
+/*audio,
 canvas,
 progress,
 video {
-  display: inline-block;
+  display: inline-block;*/
   /* 1 */
-  vertical-align: baseline;
-  /* 2 */ }
+/*  vertical-align: baseline;
+  /* 2 */ /*}*/
 
 /**
    * Prevent modern browsers from displaying `audio` without controls.
