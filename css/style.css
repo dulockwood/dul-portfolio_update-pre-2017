@@ -575,16 +575,25 @@ nav {
         max-width: 100%;
 }
 
-.feature-helper{
+.feature-helper {
         display: block;
         max-width: 960px;
         margin-left: auto;
         margin-right: auto;
 }
 
+.feature-helper.small {
+        max-width: 480px;
+}
+
 .feature-wrapper {
         margin-left: 12px;
         margin-right: 12px;
+}
+
+.feature-wrapper.small {
+        margin-left: 0;
+        margin-right: 0;
 }
 
 .portfolio-image {
@@ -745,6 +754,9 @@ nav {
         .portfolio-video {
             margin-bottom: 48px;
         }
+        .portfolio-video.large {
+            max-width: 720px;
+        }
         .text-heading {
             font-size: 32px;
             line-height: 32px;
@@ -885,6 +897,10 @@ nav {
         margin-top: 0;
 }
 
+.text-body.resume.multi {
+        margin-bottom: 24px;
+}
+
 .text-body.resume span {
         font-family: Bodoni-Italic;
 }
@@ -923,6 +939,10 @@ nav {
         letter-spacing: 1px;
         margin-bottom: 12px;
         margin-top: 0;
+}
+
+.text-subheading.resume.multi {
+        margin-bottom: 0;
 }
 
 .text-title.resume {
