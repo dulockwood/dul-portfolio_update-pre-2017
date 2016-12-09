@@ -34,7 +34,7 @@ $(document).ready(function() {
   $('.hyperlink').click(function() {
       var newLocation = this.href;
       event.preventDefault();
-      $('body').fadeOut(500, newpage);
+      $('body').fadeOut(200, newpage);
       function newpage() {
         window.location = newLocation;
       }
