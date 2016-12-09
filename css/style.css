@@ -1026,6 +1026,7 @@ nav {
             border-left: 1px solid #cccccc;
             flex: 2 0 0;
                 -webkit-flex: 2 0 0;
+            margin-bottom: 72px;
             margin-left: initial;
             margin-right: initial;
             margin-top: 0;
@@ -1054,6 +1055,9 @@ nav {
         }
         .resume-pdf {
             margin-top: 72px;
+        }
+        .text-body.resume.last {
+            margin-bottom: 0;
         }
         .text-description.resume, .text-title.resume {
             text-align: right;
@@ -1257,6 +1261,7 @@ html {
    * Remove default margin.
    */
 body {
+        display: none;
         margin: 0;
         padding: 0;
         margin: 0;
