@@ -5,9 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Daniel Ulysses Lockwood | Portfolio</title>
-    <!--<link rel="stylesheet" href="css/foundation.css">--><!--Foundation 6 file-->
-    <!--<link rel="stylesheet" href="css/app.css">--><!--Foundation 6 file-->
+    <title>Daniel Ulysses Lockwood | Bernie For President</title>
     <link rel="stylesheet" href="css/style.css" />
     <!--<link rel="apple-touch-icon" sizes="57x57" href="/apple-touch-icon-57x57.png">-->
     <!--<link rel="apple-touch-icon" sizes="60x60" href="/apple-touch-icon-60x60.png">-->
@@ -28,17 +26,17 @@
     <!--<meta name="msapplication-TileColor" content="#00aba9">-->
     <!--<meta name="msapplication-TileImage" content="/mstile-144x144.png">-->
     <!--<meta name="theme-color" content="#bdbdbd">-->
-    
   </head>
+  
 <body>
     <nav>
-        <div class="nav-content-background"><!--[TASK]: change orientation with @media-->
+        <div class="nav-content-background">
             <div class="nav-content-wrapper">
             <div class="nav-content">
                 <div class="nav-heading">
                     <ul class="outer-heading-ul">
-                        <li><object class="nav-logo-svg" data="img/svg_logo_80x80.svg"></object></li>
-                        <li><object class="nav-menuicon-svg navToggleButton" data="img/svg_icon-menu-thin_18x18.svg"></object></li><!--[TASK]: use javascript to trigger the reveal of the nav at mobile size-->
+                        <li><object class="nav-logo-svg" data="img/svg_logo_80x80_filled-black.svg"></object></li>
+                        <li><object class="nav-menuicon-svg navToggleButton" data="img/svg_icon-menu-thin_18x18.svg"></object></li>
                         <li>
                             <ul class="inner-heading-ul">
                                 <li><object class="nav-name-svg" data="img/svg_dulockwood-name-precise_172x14.svg"></object></li>
@@ -47,11 +45,10 @@
                         </li>
                     </ul>
                 </div>
-                <div id="nav-links-overlay" class="nav-links"><!--[TASK]: change display value for desktop with @media 1024px-->
-                    <!--button to close nav-->
+                <div id="nav-links-overlay" class="nav-links">
                     <div class="nav-links-content">
                     <div class="ul-wrapper">
-                        <ul class="pagenav"><!--[TASK]: Assure links are live-->
+                        <ul class="pagenav">
                             <li><object class="nav-menuclose-svg navToggleButton" data="img/svg_icon-menuclose_24x24.svg"></object></li><!--This is the X-->
                             <li><div class="link-container"><a href="about.html" class="hyperlink">About</a></div></li>
                             <li><div class="link-container"><a href="index.html" class="hyperlink">Portfolio</a></div></li>
@@ -69,13 +66,12 @@
                 </div><!--end ".nav-content"-->
             </div><!--end ".nav-content-wrapper"-->
         </div><!--end ".nav-content-background"-->
-        
     </nav>
     
     <div class="container">
         <div class="content-portfolio">
-            <div class="banner-helper"><!--[TASK]: Make higher resolution versions load with Javascript when screen size is beyond 1920-->
-                <img class="banner" src="img/portfolio-banner_s4p_2304x720.png">
+            <div class="banner-helper">
+                <img class="banner" src="img/portfolio-banner_s4p_2304x720.png" alt="Bernie For President Banner">
             </div><!--end ".banner-helper"-->
             <div class="content-intro">
               <p class="text-heading">A Future To Believe In</p>
@@ -91,13 +87,11 @@
               <img class="divider" src="img/divider-line_24x1.png">
             </div><!--end ".content-intro"-->
             <div class="content-main">
-              <div class="flex-grid"> <!--row 1--><!--SOCIAL MEDIA AVATAR-->
+              <div class="flex-grid"><!--SOCIAL MEDIA AVATAR-->
                   <div class="cell">
-                          <div class="portfolio-image border">
-                            <img class="img-scale"
-                                srcset="img/content_s4p_social-blue_1575x1575.jpg 3x, img/content_s4p_social-blue_1050x1050.jpg 2x"
-                                src="img/content_s4p_social-blue_525x525.jpg" alt="Bernie Sanders Social Media Avatar">
-                          </div><!--end "portfolio-image"-->
+                    <div class="portfolio-image border">
+                      <img class="img-scale" src="img/content_s4p_social-blue_1050x1050.jpg" alt="Bernie Sanders Social Media Avatar">
+                    </div><!--end "portfolio-image.border"-->
                   </div><!--end ".cell"-->
                   <div class="cell">
                     <div class="content-section">
@@ -112,15 +106,13 @@
                       </p>
                     </div><!--end ".content-section"-->
                   </div><!--end ".cell"-->
-              </div><!--end ".flex-grid"--> <!--end row 1-->
+              </div><!--end ".flex-grid"-->
               <img class="divider" src="img/divider-line_24x1.png">
-              <div class="flex-grid"> <!--row 2--><!--NC RALLY FLYER-->
+              <div class="flex-grid"><!--NC RALLY FLYER-->
                   <div class="cell">
-                          <div class="portfolio-image border">
-                            <img class="img-scale"
-                                srcset="img/content_s4p_nc-rally_1575x2434.jpg 3x, img/content_s4p_nc-rally_1050x1623.jpg 2x"
-                                src="img/content_s4p_nc-rally_525x811.jpg" alt="Flyer for Bernie Charlotte Rally">
-                          </div><!--end "portfolio-image"-->
+                    <div class="portfolio-image border">
+                      <img class="img-scale" src="img/content_s4p_nc-rally_1050x1623.jpg" alt="Flyer for Bernie Charlotte Rally">
+                    </div><!--end "portfolio-image.border"-->
                   </div><!--end ".cell"-->
                   <div class="cell">
                     <div class="content-section">
@@ -135,11 +127,11 @@
                       </p>
                     </div><!--end ".content-section"-->
                   </div><!--end ".cell"-->
-              </div><!--end ".flex-grid"--> <!--end row 2-->
+              </div><!--end ".flex-grid"-->
               <img class="divider" src="img/divider-line_24x1.png">
             </div><!--end ".content-main"-->
-          <div class="banner-helper"><!--[TASK]: Make higher resolution versions load with Javascript when screen size is beyond 1920-->
-              <img class="banner" src="img/portfolio-banner_csfb_2304x720.jpg">
+          <div class="banner-helper">
+            <img class="banner" src="img/portfolio-banner_csfb_2304x720.jpg" alt="Carolina Students For Bernie Banner">
           </div><!--end ".banner-helper"-->
           <div class="content-intro">
               <p class="text-heading">The Young Revolution</p>
@@ -156,33 +148,31 @@
               <img class="divider" src="img/divider-line_24x1.png">
             </div><!--end ".content-intro"-->
             <div class="content-main">
-              <div class="flex-grid"> <!--row 1--><!--[TASK]: Replace with image of CSFB logo in square space-->
-                  <div class="cell">
-                          <div class="portfolio-image border">
-                            <img class="img-scale" src="img/content_csfb_logo_960x960.png" alt="Bernie Sanders Social Media Avatar">
-                          </div><!--end "portfolio-image"-->
-                  </div><!--end ".cell"-->
-                  <div class="cell">
-                    <div class="content-section">
-                      <p class="text-title">
-                        Organization Logo
-                      </p>
-                      <p class="text-description">
-                        The logo combined the graphic elements of UNC's Old Well logo and the typography of the Bernie Sanders' campaign. 
-                        This showed our solidarity with the campaign as well as reinforced our focus on the city of Chapel Hill.
-                        The left side of the logo was designed to stand alone as an icon for alternative purposes. 
-                      </p>
-                    </div><!--end ".content-section"-->
-                  </div><!--end ".cell"-->
-              </div><!--end ".flex-grid"--> <!--end row 1-->
+              <div class="flex-grid"><!--ORGANIZATION LOGO-->
+                <div class="cell">
+                  <div class="portfolio-image border">
+                    <img class="img-scale" src="img/content_csfb_logo_960x960.png" alt="Carolina Students For Bernie Logo">
+                  </div><!--end "portfolio-image.border"-->
+                </div><!--end ".cell"-->
+                <div class="cell">
+                  <div class="content-section">
+                    <p class="text-title">
+                      Organization Logo
+                    </p>
+                    <p class="text-description">
+                      The logo combined the graphic elements of UNC's Old Well logo and the typography of the Bernie Sanders' campaign. 
+                      This showed our solidarity with the campaign as well as reinforced our focus on the city of Chapel Hill.
+                      The left side of the logo was designed to stand alone as an icon for alternative purposes. 
+                    </p>
+                  </div><!--end ".content-section"-->
+                </div><!--end ".cell"-->
+              </div><!--end ".flex-grid"-->
               <img class="divider" src="img/divider-line_24x1.png">
-              <div class="flex-grid"> <!--row 2--><!--RALLY AGAINST STUDENT DEBT FLYER-->
-                  <div class="cell">
-                          <div class="portfolio-image border">
-                            <img class="img-scale"
-                                srcset="img/content_csfb_student-debt_1050x1623.jpg 2x"
-                                src="img/content_csfb_student-debt_525x811.jpg" alt="Rally Against Student Debt">
-                          </div><!--end "portfolio-image"-->
+              <div class="flex-grid"><!--RALLY AGAINST STUDENT DEBT FLYER-->
+                <div class="cell">
+                  <div class="portfolio-image border">
+                    <img class="img-scale" src="img/content_csfb_student-debt_1050x1623.jpg" alt="Rally Against Student Debt">
+                  </div><!--end "portfolio-image.border"-->
                   </div><!--end ".cell"-->
                   <div class="cell">
                     <div class="content-section">
@@ -197,64 +187,65 @@
                       </p>
                     </div><!--end ".content-section"-->
                   </div><!--end ".cell"-->
-              </div><!--end ".flex-grid"--> <!--end row 2-->
+              </div><!--end ".flex-grid"-->
               <img class="divider" src="img/divider-line_24x1.png">
-                <div class="flex-grid"> <!--row 3--><!--THE PIT CAMPAIGN FLYERS-->
-                  <div class="cell">
-                          <div class="portfolio-image border">
-                            <img class="img-scale"
-                                srcset="img/content_csfb_voting_1050x1623.jpg 2x"
-                                src="img/content_csfb_voting_525x811.jpg" alt="Early Voting NC Information">
-                          </div><!--end "portfolio-image"-->
-                  </div><!--end ".cell"-->
-                  <div class="cell">
-                    <div class="content-section">
-                      <p class="text-title">
-                        "The Pit" Campaign Flyers
-                      </p>
-                      <p class="text-description">
-                        These half-sheet flyers&mdash;printed en masse in black-and-white and handed out to students passing through "The Pit,"
-                        a centralized location on campus&mdash;spread awareness of the campaign and our involvement. 
-                        <br>
-                        <br>
-                        The first flyer informs potential NC voters of the early voting period and the new Voter ID law in the state.
-                        <br>
-                        <br>
-                        The second flyer visualizes the history of the minimum wage and argues the merits for raising it.
-                      </p>
-                    </div><!--end ".content-section"-->
-                  </div><!--end ".cell"-->
-              </div><!--end ".flex-grid"--> <!--end row 3-->
+              <div class="flex-grid duo-image"><!--THE PIT CAMPAIGN FLYERS-->
+                <div class="cell">
+                  <div class="portfolio-image border">
+                    <img class="img-scale" src="img/content_csfb_voting_1050x1623.jpg" alt="Early Voting NC Information">
+                  </div><!--end "portfolio-image.border"-->
+                </div><!--end ".cell"-->
+                <div class="cell">
+                  <div class="portfolio-image border">
+                    <img class="img-scale" src="img/content_csfb_fight-for-15_1050x1623.jpg" alt="Minimum Wage Information">
+                  </div><!--end "portfolio-image.border"-->
+                </div><!--end ".cell"-->
+              </div><!--end ".flex-grid.duo-image"-->
+              <div class="flex-grid">
+                <div class="cell">
+                  <div class="content-section">
+                    <p class="text-title">
+                      "The Pit" Campaign Flyers
+                    </p>
+                    <p class="text-description">
+                      These half-sheet flyers&mdash;printed en masse in black-and-white and handed out to students passing through "The Pit,"
+                      a centralized location on campus&mdash;spread awareness of the campaign and our involvement. 
+                      <br>
+                      <br>
+                      The first flyer informs potential NC voters of the early voting period and the new Voter ID law in the state.
+                      <br>
+                      <br>
+                      The second flyer visualizes the history of the minimum wage and argues the merits for raising it.
+                    </p>
+                  </div><!--end ".content-section"-->
+                </div><!--end ".cell"-->
+              </div><!--end ".flex-grid"-->
               <img class="divider" src="img/divider-line_24x1.png">
-                <div class="flex-grid"> <!--row 4--><!--THE PIT CAMPAIGN FLYERS 2-->
-                  <div class="cell">
-                          <div class="portfolio-image border">
-                            <img class="img-scale"
-                                srcset="img/content_csfb_fight-for-15_1050x1623.jpg 2x"
-                                src="img/content_csfb_fight-for-15_525x811.jpg" alt="Early Voting NC Information">
-                          </div><!--end "portfolio-image"-->
-                  </div><!--end ".cell"-->
-                  <div class="cell">
-                    <div class="content-section">
-                      <p class="text-title">
-                        Tabasco Bern Sauce
-                      </p>
-                      <p class="text-description">
-                        Bernie's campaign utilized social media to energize a millennial base and dominate online discussion.
-                        The Twitter hashtag, #feelthebern quickly grew in popularity and became the main hashtag to represent the anti-establishment progressive movement during the campaign.
-                        This photoshopped Tabasco sauce bottle was my small contribution to the phenomenon.
-                      </p>
-                    </div><!--end ".content-section"-->
-                  </div><!--end ".cell"-->
-              </div><!--end ".flex-grid"--> <!--end row 3-->
+              <div class="flex-grid"><!--TABASCO BERN SAUCE-->
+                <div class="cell">
+                  <div class="portfolio-image">
+                    <img class="img-scale" src="img/content_csfb_tabasco_480x697.jpg" alt="Tabasco Bern Sauce">
+                  </div><!--end "portfolio-image"-->
+                </div><!--end ".cell"-->
+                <div class="cell">
+                  <div class="content-section">
+                    <p class="text-title">
+                      Tabasco Bern Sauce
+                    </p>
+                    <p class="text-description">
+                      Bernie's campaign utilized social media to energize a millennial base and dominate online discussion.
+                      The Twitter hashtag, #feelthebern, quickly grew in popularity and became the main hashtag to represent the anti-establishment progressive movement during the campaign.
+                      This photoshopped Tabasco sauce bottle was my small contribution to the phenomenon.
+                    </p>
+                  </div><!--end ".content-section"-->
+                </div><!--end ".cell"-->
+              </div><!--end ".flex-grid"-->
               <img class="divider" src="img/divider-line_24x1.png">
             </div><!--end ".content-main"-->
         </div><!--end ".content-portfolio"-->
     </div><!--end ".container"-->
     
     <script src="js/jquery-3.1.1.min.js" charset="utf-8"></script>
-    <!--<script src="js/vendor/what-input.js"></script>--><!--Foundation 6 file-->
-    <!--<script src="js/vendor/foundation.js"></script>-->
     <script src="js/main.js" charset="utf-8"></script>
 </body>
 </html>

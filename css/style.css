@@ -23,15 +23,11 @@ a.svg:after {
 }
 
 .hyperlink:hover {
-        text-decoration: line-through;
+        text-decoration: underline;
 }
 
 .hyperlink:active {
-        text-decoration: line-through;
-}
-
-.hyperlink-currentpage {
-        text-decoration: line-through;
+        text-decoration: underline;
 }
 
 img {
@@ -183,10 +179,6 @@ nav {
         margin-right: 24px;
 }
 
-#nav-links-overlay {
-        
-}
-
 .nav-logo-svg {
         height: 72px;
         width: auto;
@@ -220,6 +212,10 @@ nav {
 .nav-subheading-svg{
         height: 8.25px;
         width: auto;
+}
+
+.selected-page {
+    background-color: #2b2b2b;
 }
 
 @media (min-width: 768px) {
@@ -571,6 +567,10 @@ nav {
         margin: 42px auto 48px auto;
 }
 
+.duo-image .cell:nth-child(1) {
+       margin-bottom: 12px; 
+}
+
 .feature {
         max-width: 100%;
 }
@@ -580,6 +580,10 @@ nav {
         max-width: 960px;
         margin-left: auto;
         margin-right: auto;
+}
+
+.feature-helper.medium {
+        max-width: 720px;
 }
 
 .feature-helper.small {
@@ -594,20 +598,6 @@ nav {
 .feature-wrapper.small {
         margin-left: 0;
         margin-right: 0;
-}
-
-.portfolio-image {
-        align-self: center;
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 480px;
-}
-
-.portfolio-video {
-        align-self: center;
-        margin-left: 12px;
-        margin-right: 12px;
-        max-width: 480px;
 }
 
 .iframe-container {
@@ -632,6 +622,20 @@ nav {
         margin-bottom: 80px;
 }
 
+.portfolio-image {
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 480px;
+}
+
+.portfolio-video {
+        align-self: center;
+        margin-left: 12px;
+        margin-right: 12px;
+        max-width: 480px;
+}
+
 .project-title {
         font-family: NeueHaasGroteskDisp-Bold;
         font-size: 14px;
@@ -639,6 +643,14 @@ nav {
         text-align: left;
         margin-top: 0;
         margin-bottom: 2px;
+}
+
+.text-annotation {
+        color: #cccccc;
+        font-family: Bodoni-Italic;
+        font-size: 14px;
+        margin-top: 12px;
+        text-align: center;
 }
 
 .text-body {
@@ -699,6 +711,9 @@ nav {
         .content-intro {
             max-width: 480px;
         }
+        .text-annotation {
+            font-size: 16px;
+        }
         .text-body, .text-description {
             font-size: 16px;
             line-height: 30px;
@@ -747,6 +762,12 @@ nav {
         .divider {
             margin-top: 72px;
             margin-bottom: 72px;
+        }
+        .duo-image {
+            margin-bottom: 48px;
+        }
+        .duo-image .cell:nth-child(1) {
+            margin-bottom: 0; 
         }
         .feature-helper {
             margin-bottom: 48px;
@@ -1128,6 +1149,46 @@ nav {
 /* END RESUME PAGE Component
      >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
+/* ABOUT PAGE Component
+     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+.content-portfolio.about.flex-grid {
+        display: block;
+}
+
+.content-intro.about {
+        margin-top: 48px;
+}
+
+@media (min-width: 768px) {
+        .content-intro.about {
+            margin-top: 72px;
+        }
+        .content-portfolio.about {
+            margin-top: 188px;
+        }
+}
+
+@media (min-width: 1024px) {
+        .banner-helper.about {
+            display: none;
+        }
+        .content-portfolio.about {
+            height: 100vh;
+            margin-top: 0;
+        }
+        .content-portfolio.about.flex-grid {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .divider.about {
+            margin-bottom: 0;
+        }
+}
+
+/* END ABOUT PAGE Component
+     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 
 object {
