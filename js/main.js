@@ -10,7 +10,7 @@ $(document).ready(function() {
     $(".nav-links-overlay").hide().delay(750).fadeIn(500);
     $(".nav-links-content").hide().delay(750).fadeIn(500);
   }
-  else if ($(window).width() >= 1024) {
+  else if ($(window).width() >= 1024){
     $(".nav-content").hide().delay(750).fadeIn(500);
   }
     
@@ -28,9 +28,6 @@ $(document).ready(function() {
       }); //end fadeToggle()
     }); //end click()
     
-    
-  
-    
   $('.hyperlink').click(function() {
       var newLocation = this.href;
       event.preventDefault();
@@ -39,6 +36,28 @@ $(document).ready(function() {
         window.location = newLocation;
       }
   });
+  
+  //define variable for each portfolio icon/overlay (potetnially correspond one and the other and check for numbers)
+  //target icon's child div that contains the overlay
+  //set up event on click and hover and focus for desktop, tap for mobile
+  //change display value from 'none' to 'flex' and have scaling animation from center as well
+  //revert display value back to none on mouseleave for desktop, or on click/tap of another element
+  //transition between display values with animation
+  //
+  //search "jQuery" in style.css to find the code that needs to be gutted.
     
     
+//  if($(window).width() < 1024){
+//    $('.icon-container').bind("mouseenter focus",
+//      function(event) {
+//      var meep = this.
+//    })//end bind
+//  }
+//  else if($(window).width() >= 1024){
+//    $('.icon-container').click(function() {
+//      
+//    })//end click()
+//  };
+//    //code
+//  }
 });//end ready

@@ -55,9 +55,10 @@ nav {
 }
 
 .nav-heading .outer-heading-ul{
-        margin: 0;
+        margin: 0 24px 0 24px;
+        max-width: 480px;
         padding: 0;
-
+        position: relative;
 }
 
 .nav-heading .outer-heading-ul li{
@@ -69,11 +70,11 @@ nav {
         line-height: 0;
 }
 
-.nav-heading .outer-heading-ul > li:nth-child(2){ /*menu icon*/
-        height: 24px;
-        margin-left: 12px;
-        padding-top: 12px;
-        width: 24px;
+.nav-heading .outer-heading-ul > li:nth-child(3){ /*menu icon*/
+        height: 48px;
+        position: absolute;
+            right: -15px;
+        width: 48px;
 }
 
 .nav-heading .outer-heading-ul li .inner-heading-ul {
@@ -81,8 +82,7 @@ nav {
 }
 
 .nav-heading .outer-heading-ul li .inner-heading-ul li:nth-child(1){ /*title name*/
-        margin-left: 12px;
-        padding-top: 12px;
+        padding-top: 15px;
 }
 
 .nav-heading .outer-heading-ul li .inner-heading-ul li:nth-child(2){ /*title subheading*/
@@ -136,17 +136,21 @@ nav {
 
 .nav-links-content .ul-wrapper ul.pagenav li:nth-child(1) {
         height: 48px;
+        /*margin: 0 24px 0 24px;*/
+        max-width: 480px;
+        padding: 0;
+        position: relative;
 }
 
 .nav-links-content .ul-wrapper ul.pagenav li:nth-child(4) {
         border-bottom: 1px solid #727272;
-}
+}/*targets "Resume" and adds border to separate it from social media icons on mobile nav*/
 
 .nav-links-content .ul-wrapper ul.pagenav li .link-container {
-        height: 48px;
-        line-height: 48px;
+        height: 60px;
+        line-height: 60px;
         text-align: center;
-}
+}/*sets line height of "About," "Portfolio," and "Resume" section*/
 
 .nav-links-content .ul-wrapper ul.pagenav li a {
         color: #eeeeee;
@@ -155,7 +159,7 @@ nav {
         letter-spacing: 1px;
         margin-left: auto;
         margin-right: auto;
-}
+}/*targets "About," "Portfolio," and "Resume" section for styling*/
 
 .nav-links-content .ul-wrapper {
         text-align: center;
@@ -175,7 +179,7 @@ nav {
         margin-top: 12px;
 }
 
-.nav-links-content .ul-wrapper ul.socialicon li:nth-child(4) {
+.nav-links-content .ul-wrapper ul.socialicon li:nth-child(3) { /*change to (4) if behance is included again*/
         margin-right: 24px;
 }
 
@@ -187,24 +191,25 @@ nav {
 .nav-menuclose-svg {
         height: 24px;
         position: absolute;
-        left: 12px;
-        top: 12px;
+            right: 21px;
+            top: 11px;
         width: auto;
 }
 
 .nav-menuicon-svg {
         height: 18px;
-        padding-left: 3px;
-        padding-top: 3px;
         width: 18px;
+        position: absolute;
+            right: 15px;
+            top: 15px;
 }
 
 .nav-name-svg {
-        height: 14px;
+        height: 15px;
         width: auto;
 }
 
-.nav-socialicon-svg {
+.socialicon-svg {
         height: 24px;
         width: auto;
 }
@@ -218,6 +223,37 @@ nav {
     background-color: #2b2b2b;
 }
 
+@media (min-width: 480px) {
+    
+        .nav-heading .outer-heading-ul{
+            margin: 0 auto;
+            padding: 0 24px 0 24px;
+        }
+        .nav-heading .outer-heading-ul > li:nth-child(3){ /*menu icon*/
+            position: absolute;
+                right: 9px;
+        }
+        .nav-links-content .ul-wrapper ul.pagenav li:nth-child(1) {
+            margin: 0 auto;
+            padding: 0 24px 0 24px;
+        }
+        .nav-menuclose-svg {
+            position: absolute;
+                right: 21px;
+                top: 11px;
+        }
+}/*assures the mobile nav stays aligned to the content. Padding cooperates with margin-auto*/
+
+@media (min-width: 530px) {
+        .nav-heading .outer-heading-ul{
+            padding: 0;
+        }
+        .nav-heading .outer-heading-ul > li:nth-child(3){ /*menu icon*/
+            position: absolute;
+                right: -15px;
+        }
+}/*assures the mobile nav stays aligned to the content. Padding removed when max-width of outer-heading-ul div is achieved*/
+
 @media (min-width: 768px) {
         .nav-content-background{
             height: 188px;
@@ -229,6 +265,8 @@ nav {
                 -webkit-align-items: center;
                 -webkit-box-align: center;
                 align-items: center;
+            margin: 0;
+            max-width: initial;
             padding-bottom: 24px;
             padding-top: 24px;
         }
@@ -237,7 +275,7 @@ nav {
         .nav-heading .outer-heading-ul li:nth-child(1) { /*logo container*/
             display: inherit;
         }
-        .nav-heading .outer-heading-ul li:nth-child(2){ /*menu icon container*/
+        .nav-heading .outer-heading-ul li:nth-child(3){ /*menu icon container*/
             display: none;
         }
         .nav-heading .outer-heading-ul li .inner-heading-ul li {
@@ -245,6 +283,7 @@ nav {
         .nav-heading .outer-heading-ul li .inner-heading-ul li:nth-child(1){
             display: block;
             line-height: 0;
+            margin-left: 12px;
             padding-top: 0;
         }
         .nav-heading .outer-heading-ul li .inner-heading-ul li:nth-child(2){ /*title subheading*/
@@ -273,6 +312,7 @@ nav {
                     -webkit-box-align: center;
                     align-items: center;
         }
+        
         .nav-links-content .ul-wrapper ul.pagenav {
             display: flex;
                 justify-content: center;
@@ -290,6 +330,10 @@ nav {
             border-top: initial;
             display: inline; /*keeps nav text elements in horizontal line*/
         }
+        .nav-links-content .ul-wrapper ul.pagenav li .link-container {
+            height: 48px;
+            line-height: 48px;
+        }/*sets line height of "About," "Portfolio," and "Resume" section*/
         .nav-links-content .ul-wrapper ul.pagenav li:nth-child(1) {
             display: none;
         }
@@ -383,7 +427,7 @@ nav {
             width: auto;
         }
             
-        .nav-socialicon-svg {
+        .socialicon-svg {
             height: 36px;
             width: auto;
         }
@@ -403,6 +447,315 @@ nav {
 /* END NAV Component
      <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
 
+/* SANDBOX Component
+     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
+
+.dividing-line {
+    display: block; /*allows for margin:auto*/
+    margin: 12px auto 12px auto;
+}
+
+.enter-button {
+    border: 1px solid #727272;
+    display: inline-block;
+    height: 48px;
+    line-height: 48px;
+    padding: 0 24px 0 24px;
+}
+
+.enter-button:active, .enter-button:hover {
+    border: 1px solid #eeeeee;
+    /*text-decoration: underline;
+    text-decoration-color: #eeeeee;
+        -moz-text-decoration-color: #eeeeee;*/
+    /*browser is not recognizing this CSS property*/
+}
+
+.enter-button-text {
+    color: #eeeeee;
+    font-family: Bodoni-Italic;
+    font-size: 14px;
+    letter-spacing: 1px;
+    margin: 0;
+}
+
+.enter-button-wrapper {
+    margin: 24px auto 0 auto;
+    text-align: center;
+}
+
+.flex-wrapper {
+    display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+}
+
+.icon-container {
+    border: 1px solid #cccccc;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    margin: 0 12px 24px 12px;
+    max-width: 480px;
+    position: relative;
+}
+
+.index-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 auto 0 auto;
+    padding: 0 12px 0 12px;
+    max-width: 1032px;
+    height: auto;
+}
+
+.overlay-content {
+    display: flex;
+    flex: 1;
+        flex-direction: column;
+        justify-content: center;
+    background-color: rgba(33,33,33,0.95);
+    padding: 24px;
+    max-width: 100%;
+}
+
+.portfolio-icon2 {
+    display: block;
+    height: auto;
+    max-width: 480px;
+    width: 100%;
+}
+
+.project-overlay {
+    background-color: rgba(245,245,245,0.5);
+    display: flex;
+    position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+    padding: 12px;
+}
+
+.summary-container {
+    text-align: center;
+}
+
+.summary-date {
+    color: #727272;
+    font-family: NeueHaasGroteskText-Italic;
+    font-size: 12px;
+}
+
+.summary-description {
+    color: #cccccc;
+    font-family: NeueHaasGroteskDisp-Bold;
+        font-size: 13px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+    margin: 0;
+}
+
+.summary-title {
+    font-family: Bodoni-BoldItalic;
+        font-size: 19px;
+    color: #f5f5f5;
+    letter-spacing: 1px;
+    line-height: 1;
+    margin: 0;
+}
+
+@media (min-width: 350px) {
+        .dividing-line {
+            margin: 12px auto 24px auto;
+        }
+        .enter-button-text {
+            font-size: 16px;
+        }
+        .summary-date {
+            font-size: 14px;
+        }
+        .summary-description {
+            font-size: 14px;
+        }
+        .summary-title {
+            font-size: 20px;
+        }
+}
+@media (min-width: 400px) {
+        .dividing-line {
+            margin: 24px auto 24px auto;
+        }
+        .project-overlay {
+            padding: 18px;
+        }
+}/*end @media 400*/
+
+@media (min-width: 480px) {
+        .enter-button-wrapper {
+            margin: 36px auto 0 auto;
+        }
+        .project-overlay {
+            padding: 24px;
+        }
+        .summary-date {
+            font-size: 15px;
+            line-height: 2;
+        }
+        .summary-description {
+            font-size: 16px;
+        }
+        .summary-title {
+            font-size: 24px;
+        }
+}/*end @media 480*/
+
+@media (min-width: 528px) {
+        .dividing-line {
+            margin: 36px auto 36px auto;
+        }
+        .enter-button-wrapper {
+            margin: 48px auto 0 auto;
+        }
+        .project-overlay {
+            padding: 24px;
+        }
+        .summary-date {
+            font-size: 15px;
+            line-height: 2;
+        }
+        .summary-description {
+            font-size: 16px;
+        }
+        .summary-title {
+            font-size: 28px;
+        }
+}/*end @media 528*/
+
+@media (min-width: 768px) {
+        .dividing-line {
+            margin: 24px auto 24px auto;
+        }
+        .enter-button-wrapper {
+            margin: 24px auto 0 auto;
+        }
+        .icon-container {
+            flex: 1;
+        }
+        .project-overlay {
+            padding: 18px;
+        }
+        .summary-date {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .summary-description {
+            font-size: 14px;
+        }
+        .summary-title {
+            font-size: 20px;
+        }
+}/*end @media 768*/
+
+@media (min-width: 928px) {
+        .enter-button-wrapper {
+            margin: 36px auto 0 auto;
+        }
+        .project-overlay {
+            padding: 24px;
+        }
+        .summary-date {
+            font-size: 15px;
+            line-height: 2;
+        }
+        .summary-description {
+            font-size: 16px;
+        }
+        .summary-title {
+            font-size: 24px;
+        }
+}/*end @media 928*/
+
+@media (min-width: 1024px) {
+        .dividing-line {
+            margin: 18px auto 24px auto;
+        }
+        .enter-button-text {
+            font-size: 16px;
+        }
+        .enter-button-wrapper {
+            margin: 24px auto 0 auto;
+        }
+        .project-overlay {
+            opacity: 0;
+            padding: 12px;
+        }
+        .project-overlay:active, .project-overlay:hover, .project-overlay:focus {
+            opacity: 1;
+        }
+        /*remove opacity properties when jQuery solution
+         *is engineered. This is only temporary*/
+        .summary-date {
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .summary-description {
+            font-size: 14px;
+        }
+        .summary-title {
+            font-size: 20px;
+        }
+}/*end @media 1024*/
+
+@media (min-width: 1144px) {
+        .dividing-line {
+            margin: 24px auto 24px auto;
+        }
+        .project-overlay {
+            padding: 18px;
+        }
+        .summary-title {
+            font-size: 24px;
+        }
+}/*end @media 1144*/
+
+@media (min-width: 1380px) {
+        .enter-button-wrapper {
+            margin: 36px auto 0 auto;
+        }
+        .project-overlay {
+            padding: 24px;
+        }
+        .summary-date {
+            font-size: 15px;
+            line-height: 2;
+        }
+        .summary-description {
+            font-size: 16px;
+        }
+        .summary-title {
+            font-size: 24px;
+        }
+}/*end @media 1380*/
+
+@media (min-width: 1462px) {
+        .dividing-line {
+            margin: 36px auto 36px auto;
+        }
+        .enter-button-wrapper {
+            margin: 48px auto 0 auto;
+        }
+        .project-overlay {
+            padding: 24px;
+        }
+        .summary-title {
+            font-size: 28px;
+        }
+}/*end @media 1462*/
+
+/* END SANDBOX Component
+     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
 
 
 /* INDEX CONTENT Component
@@ -416,7 +769,7 @@ nav {
 }
 
 .content {
-        margin-top: 60px;
+        margin-top: 72px;
 }
 
 .flex-grid {
@@ -424,15 +777,22 @@ nav {
 }
 
 .img-scale {
-        height: auto;
+        height: auto ;
         max-width: 100%;
+}
+
+.portfolio-icon {
+        align-self: center;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 480px;
 }
 
 @media (min-width: 768px) {
         .content {
             margin-top: 200px;
         }
-        .content-portfolio {
+        .content-portfolio { /*Why does this exist here?*/
             margin-top: 188px;
         }
         .flex-grid {
@@ -448,7 +808,7 @@ nav {
             max-width: 320px;
             padding-bottom: 0;
         }
-        .flex-grid .col:nth-child(1) {
+        .flex-grid .col:nth-child(1) { /*targeting the right portfolio item and granting a margin to push the content to the center*/
             margin-right: 12px;
         }
 }/*end @media 768*/
@@ -456,7 +816,7 @@ nav {
 @media (min-width: 1024px) {
         .content {
             margin-left: 342px; /*change if the nav component is set to variable width*/
-            margin-top: 12px;
+            margin-top: 24px;
         }
 }/*end @media 1024*/
 
@@ -673,6 +1033,18 @@ nav {
         line-height: 26px;
         margin-bottom: 0;
         margin-top: 0;
+}
+
+.text-description a span {
+        font-family: Bodoni-Italic;
+}
+
+.text-description a:link span, .text-description a:visited span {
+        color: #222222;
+}
+
+.text-description a:hover span, .text-description a:focus span, .text-description a:active span {
+        text-decoration: underline;
 }
 
 .text-heading {
