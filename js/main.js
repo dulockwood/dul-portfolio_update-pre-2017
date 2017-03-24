@@ -36,28 +36,44 @@ $(document).ready(function() {
         window.location = newLocation;
       }
   });
+    
+    
+  if($(window).width() < 1024){
+    $('.icon-container').on('click', function() {
+        var whiteBox = $(this).children('.project-overlay');
+        var blackBox = whiteBox.children('.overlay-content');
+        
+        if($(whiteBox).css('display') == 'none') {
+            
+            whiteBox.fadeIn(400).css('display', 'flex');
+            blackBox.delay(400).fadeIn(400).css('display', 'flex');
+        }
+        else if($(whiteBox).css('display') == 'flex'){
+            
+            blackBox.fadeOut(400);
+            whiteBox.delay(200).fadeOut(400);
+        }
+    })//end on()
+  }
+  else if($(window).width() >= 1024){
+    $('.icon-container').on('click mouseenter', function() {
+        var whiteBox = $(this).children('.project-overlay');
+        var blackBox = whiteBox.children('.overlay-content');
+        
+        if($(whiteBox).css('display') == 'none') {
+            
+            whiteBox.fadeIn(400).css('display', 'flex');
+            blackBox.delay(400).fadeIn(400).css('display', 'flex');
+        }
+        else if($(whiteBox).css('display') == 'flex'){
+            
+            blackBox.fadeOut(400);
+            whiteBox.delay(200).fadeOut(400);
+        }
+    })//end on()
+  };
   
-  //define variable for each portfolio icon/overlay (potetnially correspond one and the other and check for numbers)
-  //target icon's child div that contains the overlay
-  //set up event on click and hover and focus for desktop, tap for mobile
-  //change display value from 'none' to 'flex' and have scaling animation from center as well
-  //revert display value back to none on mouseleave for desktop, or on click/tap of another element
-  //transition between display values with animation
-  //
-  //search "jQuery" in style.css to find the code that needs to be gutted.
+  var overlayArray = $('body').find('.project-overlay');
+  console.log(overlayArray);
     
-    
-//  if($(window).width() < 1024){
-//    $('.icon-container').bind("mouseenter focus",
-//      function(event) {
-//      var meep = this.
-//    })//end bind
-//  }
-//  else if($(window).width() >= 1024){
-//    $('.icon-container').click(function() {
-//      
-//    })//end click()
-//  };
-//    //code
-//  }
 });//end ready
