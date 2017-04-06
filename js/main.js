@@ -50,23 +50,18 @@ $(document).ready(function() {
   if($(window).width() < 1024){
     
     $('.icon-container').on('click', function() {
-        
+          
+        var disWun = $(this);
         var whiteBox = $(this).children('.project-overlay');
         var blackBox = whiteBox.children('.overlay-content');
         
         if($(whiteBox).css('display') == 'none') {
             
-            whiteBox.fadeIn(400).css('display', 'flex');
-            blackBox.delay(400).fadeIn(400).css('display', 'flex');
-            overlayArrayJr.not(blackBox).fadeOut(400);
-            overlayArray.not(whiteBox).delay(200).fadeOut(400);
+            whiteBox.fadeIn(300).css('display', 'flex');
+            blackBox.delay(200).fadeIn(300).css('display', 'flex'); //must be set to achieve intended element design
+            overlayArrayJr.not(blackBox).fadeOut(200);
+            overlayArray.not(whiteBox).delay(100).fadeOut(200);
         }//if
-         
-        else if($(whiteBox).css('display') == 'flex'){
-            
-            blackBox.fadeOut(400);
-            whiteBox.delay(200).fadeOut(400);
-        }//else if
     })//end on()
   }//if
    
@@ -80,17 +75,15 @@ $(document).ready(function() {
         
         if($(whiteBox).css('display') == 'none') {
             
-            whiteBox.fadeIn(400).css('display', 'flex');
-            blackBox.delay(400).fadeIn(400).css('display', 'flex');
-            overlayArrayJr.not(blackBox).fadeOut(400);
-            overlayArray.not(whiteBox).delay(200).fadeOut(400);
+            whiteBox.stop(true, true).fadeTo(300, 1).css('display', 'flex');
+            blackBox.stop(true, true).delay(200).fadeTo(300, 1).css('display', 'flex'); //must be set to achieve intended element design
+            overlayArrayJr.not(blackBox).fadeTo(200, 0, function(){
+              $(this).css('display', 'none'); //resets display property to initial
+            });
+            overlayArray.not(whiteBox).delay(100).fadeTo(200, 0, function(){
+              $(this).css('display', 'none'); //resets display property to satisfy condition for next .on() event
+            });
         }//if
-          
-        else if($(whiteBox).css('display') == 'flex'){
-            
-            blackBox.fadeOut(300);
-            whiteBox.delay(150).fadeOut(300);
-        }//else if
     });//end on()
       
     $('.icon-container').on('mouseleave', function() {
@@ -99,8 +92,12 @@ $(document).ready(function() {
         var blackBox = whiteBox.children('.overlay-content'); //targets all other content
         var whiteBoxDisplay = whiteBox.css('display'); //gets the display property value for this .project-overlay
         
-        blackBox.fadeOut(300);
-        whiteBox.delay(150).fadeOut(300);
+        blackBox.stop(true, true).fadeTo(200, 0, function(){
+          $(this).css('display', 'none'); //resets display property to initial
+        });
+        whiteBox.stop(true, true).delay(100).fadeTo(200, 0, function(){
+          $(this).css('display', 'none'); //resets display property to satisfy condition for next .on() event
+        });
     });//end on()
   }//else if
 });//end ready
