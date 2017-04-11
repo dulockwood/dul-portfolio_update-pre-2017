@@ -60,6 +60,11 @@ html {
         /*text-decoration: underline;*/
 }
 
+.hyperlink-body {
+        font-family: "Bodoni-Italic";
+        color: #222222;
+}
+
 img {
         vertical-align: middle;
 }
@@ -516,7 +521,7 @@ nav {
 }
 
 .enter-button {
-        border: 1px solid #727272;
+        border: 2px solid #727272;
         display: inline-block;
         height: 48px;
         line-height: 48px;
@@ -524,7 +529,8 @@ nav {
 }
 
 .enter-button:active, .enter-button:hover {
-        border: 1px solid #eeeeee;
+        background-color: #2b2b2b;
+        border: 2px solid #eeeeee;
 }
 
 .enter-button-text {
@@ -1173,6 +1179,9 @@ nav {
         .divider {
             margin-top: 96px;
             margin-bottom: 96px;
+        }
+        .text-title {
+            font-size: 21px;
         }
 }/*end @media 1024*/
 

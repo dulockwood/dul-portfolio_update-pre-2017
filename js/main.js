@@ -73,17 +73,15 @@ $(document).ready(function() {
         var blackBox = whiteBox.children('.overlay-content'); //targets all other content
         var whiteBoxDisplay = whiteBox.css('display'); //gets the display property value for this .project-overlay
         
-        if($(whiteBox).css('display') == 'none') {
-            
-            whiteBox.stop(true, true).fadeTo(300, 1).css('display', 'flex');
-            blackBox.stop(true, true).delay(200).fadeTo(300, 1).css('display', 'flex'); //must be set to achieve intended element design
-            overlayArrayJr.not(blackBox).fadeTo(200, 0, function(){
-              $(this).css('display', 'none'); //resets display property to initial
-            });
-            overlayArray.not(whiteBox).delay(100).fadeTo(200, 0, function(){
-              $(this).css('display', 'none'); //resets display property to satisfy condition for next .on() event
-            });
-        }//if
+        whiteBox.stop(true, true).fadeTo(300, 1).css('display', 'flex');
+        blackBox.stop(true, true).delay(200).fadeTo(300, 1).css('display', 'flex'); //must be set to achieve intended element design
+        overlayArrayJr.not(blackBox).fadeTo(200, 0, function(){
+          $(this).css('display', 'none'); //resets display property to initial
+        });
+        
+        overlayArray.not(whiteBox).delay(100).fadeTo(200, 0, function(){
+          $(this).css('display', 'none'); //resets display property to satisfy condition for next .on() event
+        });
     });//end on()
       
     $('.icon-container').on('mouseleave', function() {
