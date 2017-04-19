@@ -13,6 +13,95 @@
  * but I leave comments when I find it essential.
 */
 
+/* FONTS
+     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
+
+@font-face {
+    font-family: NeueHaasGroteskDisp-Bold;
+    src: url(../fonts/NeueHaasGroteskDisp-Bold.TTF);
+}
+
+@font-face {
+    font-family: NeueHaasGroteskText-Italic;
+    src: url(../fonts/NeueHaasGroteskText-Italic.ttf);
+}
+
+@font-face {
+    font-family: Bodoni-BoldItalic;
+    src: url(../fonts/Bodoni-BoldItalic.otf);
+}
+
+@font-face {
+    font-family: Bodoni-Roman;
+    src: url(../fonts/Bodoni-Roman.otf);
+}
+
+@font-face {
+    font-family: Bodoni-Italic;
+    src: url(../fonts/Bodoni-Italic.otf);
+}
+
+@font-face {
+    font-family: fallback1;
+    src: local("Helvetica Neue Bold"),
+         local("HelveticaNeue-Bold");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: fallback1-italic;
+    src: local("Helvetica Neue Italic"),
+         local("HelveticaNeue-Italic");
+}
+
+@font-face {
+    font-family: fallback1-bolditalic;
+    src: local("Helvetica Neue Bold Italic"),
+         local("HelveticaNeue-BoldItalic");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: fallback2;
+    src: local("Arial");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: fallback2-italic;
+    src: local("Arial-Italic");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: fallback3;
+    src: local("Georgia");
+}
+
+@font-face {
+    font-family: fallback3-italic;
+    src: local("Georgia Italic");
+    src: local("Georgia-Italic");
+}
+
+@font-face {
+    font-family: fallback4;
+    src: local("Georgia Bold");
+    src: local("Georgia-Bold");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: fallback4-italic;
+    src: local("Georgia Bold Italic");
+    src: local("Georgia-BoldItalic");
+    font-weight: bold;
+}
+
+/* GENERAL
+     >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> */
+
 a {
         cursor: pointer;
         text-decoration: none;
@@ -20,7 +109,7 @@ a {
 
 a.svg {
         position: relative;
-        display: inline-block; 
+        display: inline-block;
 }
 
 a.svg:after {
@@ -61,7 +150,7 @@ html {
 }
 
 .hyperlink-body {
-        font-family: "Bodoni-Italic";
+        font-family: Bodoni-Italic, fallback3-italic;
         color: #222222;
 }
 
@@ -106,6 +195,7 @@ ul {
         height: 60px;
         line-height: 60px;
         text-align: center;
+        vertical-align: baseline;
 }/*sets line height of "About," "Portfolio,"
   *and "Resume" section*/
 
@@ -114,7 +204,7 @@ nav {
 
 }
 
-.nav-content-background{
+.nav-content-background {
         background-color: #212121;
                 -moz-background-clip: padding;
                 -webkit-background-clip: padding;
@@ -124,6 +214,9 @@ nav {
         position: fixed;
         top: 0;
         z-index: 2;
+}
+.nav-content-background-toggle {
+        width: auto;
 }
 
 .nav-helper {
@@ -139,7 +232,7 @@ nav {
         height: 100%;
         position: fixed;
         width: 100%;
-        font-family: "Bodoni-Italic";
+        font-family: Bodoni-Italic, fallback3-italic;
         top: 0;
         z-index: 2;
 }
@@ -155,7 +248,7 @@ nav {
 
 .nav-logo-svg {
         height: 72px;
-        width: auto;
+        width: 72px;
 }
 
 .nav-menuclose-svg {
@@ -176,7 +269,7 @@ nav {
 
 .nav-name-svg {
         height: 15px;
-        width: auto;
+        width: 185.18px;
 }
 
 .nav-subheading-svg{
@@ -223,20 +316,28 @@ nav {
 
 .ul-wrapper ul.pagenav {
         display: block;
-        margin-left: auto;
+        margin: 0 auto; 
         padding-left: 0;
 }/*padding-left must be set to override user
-  *agent stylesheet default property*/
+  *agent stylesheet default property.
+  *margin-top and bottom set to 0 to override
+  *IE default properties. margin-right changed to auto;
+  *watch for weirdness at mobile and tablet levels.
+  */
 
 .ul-wrapper ul.pagenav li {
         border-top: 1px solid #727272;
         display: block;
 }
 
+.ul-wrapper ul.pagenav li:nth-child(1) {
+        border: none;
+}
+
 .ul-wrapper ul.pagenav li a .link-container p {
         color: #eeeeee;
         display: inline;
-        font-family: "Bodoni-Italic";
+        font-family: Bodoni-Italic, fallback3-italic;
         font-size: 14px;
         letter-spacing: 1px;
         margin-left: auto;
@@ -264,6 +365,8 @@ nav {
 .ul-wrapper ul.socialicon {
         display: inline-block;
         line-height: 0; /*prevents element from having unwanted bottom space*/
+        margin-bottom: 0;
+        margin-top: 0;
         padding-left: 0;
         padding-top: 12px;
 }/*padding-left must be set to override user
@@ -274,6 +377,10 @@ nav {
         margin-bottom: 12px;
         margin-left: 24px;
         margin-top: 12px;
+}
+
+.ul-wrapper ul.socialicon li a {
+        width: 24px;
 }
 
 .ul-wrapper ul.socialicon li:nth-child(3) { /*change to (4) if behance is included again*/
@@ -317,12 +424,15 @@ nav {
         .nav-content-background{
             height: 188px;
         }
+        .nav-content-background-toggle{
+            height: 188px;
+        }
         .nav-links {
             background-color: initial;
-            display: initial;
+            display: block;
             height: initial;
-            position: initial;
-            width: initial;
+            position: static;/*IE fix*/
+            width: auto;
         }
         .nav-links-content {
             border-bottom: 1px solid #727272;
@@ -332,6 +442,7 @@ nav {
           *agent stylesheet default properties*/
         .nav-name-svg { /*title name*/
             height: 20px;
+            width: 246.15px;
         }
         .outer-heading-ul {
             display: flex;
@@ -341,7 +452,7 @@ nav {
                 -webkit-box-align: center;
                 align-items: center;
             margin: 0;
-            max-width: initial;
+            max-width: none; /*originally initial*/
             padding-bottom: 24px;
             padding-top: 24px;
         }
@@ -382,13 +493,14 @@ nav {
                     -webkit-align-items: center;
                     -webkit-box-align: center;
                     align-items: center;
-            margin-left: auto;
+            margin-left: 0;
+            margin-right: 0;
             padding-left: 0;
         }/*padding-left must be set to override
           *user agent stylesheet default property*/
         .ul-wrapper ul.pagenav li {
             border-left: 1px solid #727272;
-            border-top: initial;
+            border-top: none;
             display: inline; /*keeps nav text elements in horizontal line*/
         }
         .ul-wrapper ul.pagenav li .link-container {
@@ -400,7 +512,7 @@ nav {
             display: none;
         }
         .ul-wrapper ul.pagenav li:nth-child(4) {
-            border-bottom: initial;
+            border-bottom: none;
             border-right: 1px solid #727272;
         }
         .ul-wrapper ul.pagenav li a .link-container p {
@@ -408,10 +520,10 @@ nav {
             margin-right: 24px;
         }
         .ul-wrapper ul.socialicon {
+            display: flex;
             border-right: 1px solid #727272;
-            margin-left: initial;
-            margin-right: auto;
-            padding-top: initial;
+            margin-left: 0; /*originally intiial*/
+            padding-top: 0; /*originally initial*/
         }
 }/*end @media 768*/
 
@@ -422,18 +534,21 @@ nav {
         .nav-content-background {
             height: 100%;
             left: 0;
-            min-width: initial;
+            min-width: 0;
             width: 342px;
             display: flex;
                 flex-direction: column;
                 justify-content: center;
+        }
+        .nav-content-background-toggle {
+            width: 342px;
         }
         .nav-content-wrapper {
             padding-bottom: 96px;
         }
         .nav-logo-svg {
             height: 84px;
-            width: auto;
+            width: 84px;
         }
         .outer-heading-ul {
             padding-top: 0;
@@ -443,7 +558,23 @@ nav {
             /*display: none;*/
         }
         .outer-heading-ul li .inner-heading-ul li:nth-child(1) { /*title name container*/
+            margin-left: 0;
             padding-top: 24px;
+        }
+        .outer-heading-ul li .inner-heading-ul li:nth-child(1) a {
+            width: 246.051px;
+            /*setting the width is a shitty fallback
+             *for shitty IE not having elements adjust to
+             *the widths of contained objects. I've tried
+             *searching this for hours and haven't found
+             *shit. I bet the answer is simple but it's
+             *goddamn impossible to navigate the internet
+             *for any sort of help.
+             */
+        }
+        .outer-heading-ul li .inner-heading-ul li:nth-child(2){ /*title subheading*/
+            line-height: 0;
+            margin-left: 0;
         }
         .ul-wrapper {
             flex-direction: column;
@@ -451,9 +582,12 @@ nav {
         .ul-wrapper .pagenav {
             margin-right: auto;
         }
+        .ul-wrapper .pagenav li {
+            margin-right: auto;
+        }
         .ul-wrapper ul.socialicon {
-            border-right: initial;
-            margin-left: auto;
+            border-right: 0; /*originally intiial*/
+            margin: 0 auto;
             padding-top: 12px;
         }
 }/*end @media 1024*/
@@ -464,42 +598,75 @@ nav {
         }
 }/*end @media 1280*/
 
+@media (min-width: 1462px) {
+        /*currently, simply a marker for where flexbox
+         *goes back to 2-column on IE.
+         */
+}
+
 @media (min-width: 1920px) { /*big fuggin monitors*/
         .nav-content-background {
             width: 640px;
         }
+        .nav-content-background-toggle {
+            width: 640px;
+        }
+        .nav-links-content {
+            height: 60px;
+        }
         .nav-logo-svg {
             height: 108px;
-            width: auto;
+            width: 108px;
         }
             
         .nav-name-svg {
             height: 30px;
-            width: auto;
+            width: 369.094px;
         }
             
         .socialicon-svg {
             height: 36px;
-            width: auto;
+            width: 36px;
         }
             
         .nav-subheading-svg{
             height: 12.5px;
-            width: auto;
+            width: 371.484px;
+        }
+        .outer-heading-ul {
+            padding-bottom: 36px;
         }
         .ul-wrapper ul.pagenav li a {
             color: #eeeeee;
-            font-family: "Bodoni-Italic";
+            font-family: Bodoni-Italic, fallback3-italic;
             font-size: 21px;
             letter-spacing: 1px;
-            margin-left: 24px;
-            margin-right: 24px;
+        }
+        .ul-wrapper ul.pagenav li .link-container {
+            height: 60px;
+            line-height: 60px;
+        }/*sets line height of "About," "Portfolio,"
+          *and "Resume" section*/
+        .ul-wrapper ul.pagenav li a .link-container p {
+            font-size: 18px;
+            margin-left: 36px;
+            margin-right: 36px;
+        }
+        .ul-wrapper ul.socialicon li {
+            margin: 24px 0 24px 36px;
+        }
+        .ul-wrapper ul.socialicon li:nth-child(3) {
+            margin-right: 36px;
+        }
+        .ul-wrapper ul.socialicon li a {
+            width: 36px;
         }
 }/*end @media 1920*/
 
 @media (min-width: 2560px) { /*really big fuggin monitors*/
         .nav-content-background {
-            width: 853px;
+            /*width: 853px;*/
+            width: 50%;
         }
 }/*end @media 2560*/
 
@@ -535,7 +702,7 @@ nav {
 
 .enter-button-text {
         color: #eeeeee;
-        font-family: Bodoni-Italic;
+        font-family: Bodoni-Italic, fallback3-italic, serif;
         font-size: 14px;
         letter-spacing: 1px;
         margin: 0;
@@ -555,7 +722,7 @@ nav {
 .icon-container {
         border: 1px solid #cccccc;
         display: flex;
-        justify-content: center;
+            justify-content: center;
         height: auto;
         margin: 0 12px 24px 12px;
         max-width: 480px;
@@ -618,13 +785,13 @@ nav {
 
 .summary-date {
         color: #727272;
-        font-family: NeueHaasGroteskText-Italic;
+        font-family: NeueHaasGroteskText-Italic, fallback1-bolditalic, fallback2-italic, sans-serif;
         font-size: 12px;
 }
 
 .summary-description {
         color: #cccccc;
-        font-family: NeueHaasGroteskDisp-Bold;
+        font-family: NeueHaasGroteskDisp-Bold, fallback1, fallback2, sans-serif;
             font-size: 13px;
         letter-spacing: 1px;
         line-height: 1.5;
@@ -633,7 +800,7 @@ nav {
 
 .summary-title {
         color: #f5f5f5;
-                font-family: Bodoni-BoldItalic;
+                font-family: Bodoni-BoldItalic, fallback4-italic, serif;
             font-size: 19px;
         letter-spacing: 1px;
         line-height: 1;
@@ -721,8 +888,16 @@ nav {
         .enter-button-wrapper {
             margin: 24px auto 0 auto;
         }
+        .flex-wrapper {
+            flex-wrap: nowrap;
+        }
         .icon-container {
-            flex: 1;
+            flex: 1 1 auto;
+            /* difference in behavior between IE and Chrome:
+             * "flex-basis: auto;" in IE allows for 2 columns,
+             * but does not in Chrome. "flex-basis: 0%;" is the
+             * only thing that works in Chrome.
+             */
         }
         .project-overlay {
             padding: 18px;
@@ -854,7 +1029,7 @@ nav {
 
 @media (min-width: 2560px) {
         .content {
-            margin-left: 853px;
+            margin-left: 50%;
         }
 }/*end @media 2560*/
 
@@ -901,9 +1076,9 @@ nav {
 
 .cell {
         display: flex;
-            justify-content: center;
-        margin-left: 12px;
-        margin-right: 12px;
+            /*justify-content: center;*/ /*removing to fix IE alignment issues*/
+        margin-left: 24px;
+        margin-right: 24px;
 }
 
 .content-intro {
@@ -925,8 +1100,8 @@ nav {
 .content-section {
         align-self: center; /*works with display:flex on ".cell"*/
         max-width: 480px;
-        padding-left: 12px;
-        padding-right: 12px;
+        /*padding-left: 12px;
+        padding-right: 12px;*/
         padding-top: 24px;
 }
 
@@ -959,8 +1134,8 @@ nav {
 }
 
 .feature-wrapper {
-        margin-left: 12px;
-        margin-right: 12px;
+        margin-left: 24px;
+        margin-right: 24px;
 }
 
 .feature-wrapper.small {
@@ -997,15 +1172,23 @@ nav {
         max-width: 480px;
 }
 
+.portfolio-image img {
+    /*min-width: auto;*/
+    width: 100%;
+    max-width: 480px;
+}/*fix for IE taking .img-scale max-width: 100%
+  *to mean break parent's max-width constraints
+  */
+
 .portfolio-video {
         align-self: center;
-        margin-left: 12px;
-        margin-right: 12px;
+        margin-left: auto;
+        margin-right: auto;
         max-width: 480px;
 }
 
 .project-title {
-        font-family: NeueHaasGroteskDisp-Bold;
+        font-family: NeueHaasGroteskDisp-Bold, fallback1, fallback2, sans-serif;
         font-size: 14px;
         letter-spacing: 1px;
         text-align: left;
@@ -1015,7 +1198,7 @@ nav {
 
 .text-annotation {
         color: #cccccc;
-        font-family: Bodoni-Italic;
+        font-family: Bodoni-Italic, fallback3-italic, serif;
         font-size: 14px;
         margin-top: 12px;
         text-align: center;
@@ -1023,7 +1206,7 @@ nav {
 
 .text-body {
         color: #5f5e5d;
-        font-family: Bodoni-Roman;
+        font-family: Bodoni-Roman, fallback3, serif;
         font-size: 14px;
         line-height: 26px;
         margin-bottom: 0;
@@ -1031,12 +1214,12 @@ nav {
 }
 
 .text-body span {
-        font-family: Bodoni-Italic;
+        font-family: Bodoni-Italic, fallback3-italic, serif;
 }
 
 .text-description {
         color: #5f5e5d;
-        font-family: Bodoni-Roman;
+        font-family: Bodoni-Roman, fallback3, serif;
         font-size: 14px;
         line-height: 26px;
         margin-bottom: 0;
@@ -1044,7 +1227,7 @@ nav {
 }
 
 .text-description a span {
-        font-family: Bodoni-Italic;
+        font-family: Bodoni-Italic, fallback3-italic, serif;
 }
 
 .text-description a:link span, .text-description a:visited span {
@@ -1057,7 +1240,7 @@ nav {
 
 .text-heading {
         color: #212121;
-        font-family: NeueHaasGroteskDisp-Bold;
+        font-family: NeueHaasGroteskDisp-Bold, fallback1, fallback2, sans-serif;
         font-size: 20px;
         letter-spacing: 1px;
         margin-bottom: 0;
@@ -1066,7 +1249,7 @@ nav {
 
 .text-subheading {
         color: #5f5e5d;
-        font-family: NeueHaasGroteskDisp-Bold;
+        font-family: NeueHaasGroteskDisp-Bold, fallback1, fallback2, sans-serif;
         font-size: 11px;
         letter-spacing: 1px;
         margin-bottom: 12px;
@@ -1075,7 +1258,7 @@ nav {
 
 .text-title {
         color: #212121;
-        font-family: NeueHaasGroteskDisp-Bold;
+        font-family: NeueHaasGroteskDisp-Bold, fallback1, fallback2, sans-serif;
         font-size: 17px;
         letter-spacing: 1px;
         line-height: 19px;
@@ -1084,7 +1267,7 @@ nav {
 }
 
 .text-subheading span {
-        font-family: NeueHaasGroteskText-Italic;
+        font-family: NeueHaasGroteskText-Italic, fallback1-italic, fallback2-italic, sans-serif;
 }
 
 @media (min-width: 400px) {
@@ -1275,7 +1458,7 @@ nav {
 .resume-pdf a .link-wrapper p{
         color: #5f5e5d;
         display: inline;
-        font-family: "Bodoni-Italic";
+        font-family: Bodoni-Italic, fallback3-italic, serif;
         font-size: 14px;
         letter-spacing: 1px;
         margin-left: 24px;
@@ -1284,7 +1467,7 @@ nav {
 
 .text-body.resume {
         color: #5f5e5d;
-        font-family: Bodoni-Roman;
+        font-family: Bodoni-Roman, fallback3, serif;
         font-size: 14px;
         line-height: 26px;
         margin-bottom: 48px;
@@ -1296,12 +1479,12 @@ nav {
 }
 
 .text-body.resume span {
-        font-family: Bodoni-Italic;
+        font-family: Bodoni-Italic, fallback3-italic, serif;
 }
 
 .text-category.resume {
         color: #5f5e5d;
-        font-family: Bodoni-BoldItalic;
+        font-family: Bodoni-BoldItalic, fallback4-italic, serif;
         font-size: 16px;
         letter-spacing: 6px;
         line-height: 16px;
@@ -1310,7 +1493,7 @@ nav {
 
 .text-description.resume {
         color: #5f5e5d;
-        font-family: Bodoni-Roman;
+        font-family: Bodoni-Roman, fallback3, serif;
         font-size: 14px;
         line-height: 26px;
         margin-bottom: 24px;
@@ -1319,7 +1502,7 @@ nav {
 
 .text-heading.resume {
         color: #212121;
-        font-family: NeueHaasGroteskDisp-Bold;
+        font-family: NeueHaasGroteskDisp-Bold, fallback1, fallback2, sans-serif;
         font-size: 14px;
         letter-spacing: 1px;
         margin-bottom: 0;
@@ -1328,7 +1511,7 @@ nav {
 
 .text-subheading.resume {
         color: #5f5e5d;
-        font-family: NeueHaasGroteskDisp-Bold;
+        font-family: NeueHaasGroteskDisp-Bold, fallback1, fallback2, sans-serif;
         font-size: 11px;
         letter-spacing: 1px;
         margin-bottom: 12px;
@@ -1341,7 +1524,7 @@ nav {
 
 .text-title.resume {
         color: #212121;
-        font-family: NeueHaasGroteskDisp-Bold;
+        font-family: NeueHaasGroteskDisp-Bold, fallback1, fallback2, sans-serif;
         font-size: 14px;
         letter-spacing: 1px;
         margin-bottom: 4px;
@@ -1349,7 +1532,7 @@ nav {
 }
 
 .text-subheading.resume span {
-        font-family: NeueHaasGroteskText-Italic;
+        font-family: NeueHaasGroteskText-Italic, fallback1-italic, fallback2-italic, sans-serif;
 }
 
 @media (min-width: 400px) {
@@ -1550,6 +1733,10 @@ nav {
         .banner-helper.about {
             display: none;
         }
+        .content-intro.about {
+            margin-left: 0;
+            margin-right: 0;
+        }
         .content-portfolio.about {
             height: 100vh;
             margin-top: 0;
@@ -1569,32 +1756,6 @@ nav {
 
 
 
-/*-----FONTS-----*/
-
-@font-face {
-    font-family: NeueHaasGroteskDisp-Bold;
-    src: url(../fonts/NeueHaasGroteskDisp-Bold.TTF);
-}
-
-@font-face {
-    font-family: NeueHaasGroteskText-Italic;
-    src: url(../fonts/NeueHaasGroteskText-Italic.ttf);
-}
-
-@font-face {
-    font-family: Bodoni-BoldItalic;
-    src: url(../fonts/Bodoni-BoldItalic.otf);
-}
-
-@font-face {
-    font-family: Bodoni-Roman;
-    src: url(../fonts/Bodoni-Roman.otf);
-}
-
-@font-face {
-    font-family: Bodoni-Italic;
-    src: url(../fonts/Bodoni-Italic.otf);
-}
 
 /*-----FOUNDATION 6-----*/
 

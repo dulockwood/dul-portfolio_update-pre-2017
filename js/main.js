@@ -1,9 +1,21 @@
 $(document).ready(function() {
+  function iconAdjust() {
+    var iconHeight = $('.portfolio-icon2').first().height();
+    console.log(iconHeight);
+    var iconWrapper = $('.icon-wrapper');
+        
+    iconWrapper.each(function(){
+      var self = $(this);
+      self.css('height', iconHeight);
+    });
+  }
+  
   $(".nav-content-background").hide();
   $(".container").hide();
   $("body").show();
   $(".nav-content-background").delay(250).fadeIn(500);
-  $(".container").delay(1250).fadeIn(1000);
+  $(".container").delay(1250).fadeIn(1000, iconAdjust());
+    
     
   if($(window).width() >= 768 && $(window).width() < 1024) {
       
@@ -17,22 +29,56 @@ $(document).ready(function() {
     $(".nav-content").hide().delay(750).fadeIn(500);
   }//else if
     
+    
   $(window).resize(function(){
+    
+      iconAdjust();
       
       if($(window).width() >= 768){
         $('#nav-links-overlay').show();
       }
       else {
-        $('#nav-links-overlay').fadeOut(200);
+        $('#nav-links-overlay').css('display', 'none');
       }
   });//end resize()
     
-  $('.navToggleButton').click(function(){
+//  $(window).resize(function(){//trying to make big screens go half and half
+//      
+//      if ($(window).width() >= 2560){
+//        var windowWidth = window.innerWidth; //finds current window size
+//                                             //returns number, not a string like "2560px"
+//        console.log(windowWidth);
+//        var navWidth = (windowWidth / 2 + 'px');
+//        console.log(navWidth);
+//        
+//        $('.nav-content-background').css('width', navWidth);
+//      }
+//      else if ($(window).width() < 2560){
+//        var blah = $('.nav-content-background').hasClass('.nav-content-background-toggle');
+//        if (blah) {
+//         console.log('has class');
+//       }
+//       else {
+//         console.log('no has a class');
+//       }
+//     }//created a new css class '.nav-content-background-toggle'.
+        //Gonna switch it on when shifting from 2560 to below, and remove when going back.
+        //make sure to change width of INDEX COMPONENT as well.
+//  });//end resize()
+  
+  $('.navToggleButton').on('click', function(){
       
       $('#nav-links-overlay').fadeToggle(200, function(){
         //callback to hide then fadeIn the content of the nav-links-overlay
       }); //end fadeToggle()
-  }); //end click()
+  }).children('object').bind('click', function(event){
+      console.log(event);
+      console.log('dis shit getting clicked');
+      $('#nav-links-overlay').fadeToggle(200, function(){
+        //callback
+      }); //end fadeToggle()
+      event.stopPropagation();
+  }); //end on()
     
   $('.hyperlink').click(function() {
       
