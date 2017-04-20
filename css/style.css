@@ -428,9 +428,9 @@ nav {
             height: 188px;
         }
         .nav-links {
-            background-color: initial;
+            background-color: none;
             display: block;
-            height: initial;
+            height: auto;
             position: static;/*IE fix*/
             width: auto;
         }
@@ -729,6 +729,10 @@ nav {
         position: relative;
 }
 
+.icon-wrapper {
+        /*height: auto !important;*/ /*hotfix in an attempt to cure IE of its sins*/
+}
+
 .img-scale {
         height: auto ;
         max-width: 100%;
@@ -892,11 +896,15 @@ nav {
             flex-wrap: nowrap;
         }
         .icon-container {
-            flex: 1 1 auto;
+            /*flex: 1 1 auto;*/
             /* difference in behavior between IE and Chrome:
              * "flex-basis: auto;" in IE allows for 2 columns,
              * but does not in Chrome. "flex-basis: 0%;" is the
              * only thing that works in Chrome.
+             *
+             * Commented out, as it produced an unintended effect
+             * of flexing .icon-container of last portfolio icon
+             * to full 480px column space
              */
         }
         .project-overlay {
@@ -1583,8 +1591,8 @@ nav {
             flex: 2 0 0;
                 -webkit-flex: 2 0 0;
             margin-bottom: 72px;
-            margin-left: initial;
-            margin-right: initial;
+            margin-left: 0;
+            margin-right: 0;
             margin-top: 0;
             order: 2;
             padding-left: 24px;
@@ -1599,8 +1607,8 @@ nav {
             margin-top: 188px;
         }
         .content-section.resume {
-            margin-left: initial;
-            margin-right: initial;
+            margin-left: 0;
+            margin-right: 0;
             padding-top: 0;
         }
         .content-section.resume .text-category.resume {
@@ -1627,7 +1635,7 @@ nav {
             max-width: 480px;
         }
         .content-intro.resume {
-            border-left: initial;
+            border-left: none;
             display: block;
             max-width: 480px;
         }
@@ -1657,8 +1665,8 @@ nav {
         }
         .content-intro.resume {
             border-left: 1px solid #cccccc;
-            margin-left: initial;
-            margin-right: initial;
+            margin-left: 0;
+            margin-right: 0;
         }
         .content-main.resume {
             margin-left: 0;

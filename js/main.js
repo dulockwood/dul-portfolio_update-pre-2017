@@ -1,83 +1,85 @@
-$(document).ready(function() {
-  function iconAdjust() {
-    var iconHeight = $('.portfolio-icon2').first().height();
-    console.log(iconHeight);
-    var iconWrapper = $('.icon-wrapper');
-        
+// You're really digging deep, aren't you?
+//
+// This file has served as a sandbox for refining my knowledge of JavaScript.
+// I'll likely look back on how I coded this in a few months and scoff,
+// but I'm happy with my progress as of now.
+//
+// In order to assure the timeliness of the following function (iconAdjust();),
+// I defined it and its accompanying function outside $(document).ready.
+
+function iconAdjust() {
+      
+    var iconHeight = $('.portfolio-icon2').first().height(); //grabs height of one of the icons.
+    var iconWrapper = $('.icon-wrapper'); //creates array of all containers of portfolio icons.
+    var lastIcon = $('.portfolio-icon2').last(); //targets the odd icon out that usually sizes differently.
+      
     iconWrapper.each(function(){
-      var self = $(this);
-      self.css('height', iconHeight);
-    });
-  }
-  
+        var self = $(this);
+        self.css('height', iconHeight);
+    }); //setting the height of each image container to the height of the image.
+      
+    lastIcon.css('height', iconHeight).css('width', iconHeight); //assuring the dimensions of the last portfolio icon match the rest.
+}
+
+function initialFadeIn() {
+    
+    $(".nav-content-background").delay(250).fadeIn(500);
+    $(".container").fadeIn(1000);
+} //these statements were originally below $(".body").show(); but have been moved to control their sequence.
+
+$(document).ready(function() {
+    
   $(".nav-content-background").hide();
   $(".container").hide();
-  $("body").show();
-  $(".nav-content-background").delay(250).fadeIn(500);
-  $(".container").delay(1250).fadeIn(1000, iconAdjust());
-    
+  $("body").show(); //the big reveal!
+   
+  $.when(initialFadeIn()).done(iconAdjust()); //executes the fadeIn of most of the content, then fires iconAdjust();
     
   if($(window).width() >= 768 && $(window).width() < 1024) {
       
     $(".nav-heading").hide().delay(500).fadeIn(500);
     $(".nav-links-overlay").hide().delay(750).fadeIn(500);
     $(".nav-links-content").hide().delay(750).fadeIn(500);
-  }//if
+  } //if
     
   else if ($(window).width() >= 1024){
       
     $(".nav-content").hide().delay(750).fadeIn(500);
-  }//else if
+  } //else if
     
     
   $(window).resize(function(){
-    
-      iconAdjust();
       
-      if($(window).width() >= 768){
-        $('#nav-links-overlay').show();
-      }
-      else {
-        $('#nav-links-overlay').css('display', 'none');
-      }
-  });//end resize()
-    
-//  $(window).resize(function(){//trying to make big screens go half and half
-//      
-//      if ($(window).width() >= 2560){
-//        var windowWidth = window.innerWidth; //finds current window size
-//                                             //returns number, not a string like "2560px"
-//        console.log(windowWidth);
-//        var navWidth = (windowWidth / 2 + 'px');
-//        console.log(navWidth);
-//        
-//        $('.nav-content-background').css('width', navWidth);
-//      }
-//      else if ($(window).width() < 2560){
-//        var blah = $('.nav-content-background').hasClass('.nav-content-background-toggle');
-//        if (blah) {
-//         console.log('has class');
-//       }
-//       else {
-//         console.log('no has a class');
-//       }
-//     }//created a new css class '.nav-content-background-toggle'.
-        //Gonna switch it on when shifting from 2560 to below, and remove when going back.
-        //make sure to change width of INDEX COMPONENT as well.
-//  });//end resize()
-  
-  $('.navToggleButton').on('click', function(){
+    iconAdjust();
       
-      $('#nav-links-overlay').fadeToggle(200, function(){
-        //callback to hide then fadeIn the content of the nav-links-overlay
-      }); //end fadeToggle()
+    if($(window).width() >= 768){
+      $('#nav-links-overlay').show();
+    }
+    else {
+      $('#nav-links-overlay').css('display', 'none');
+    }
+  }); //end resize()
+    
+  $('.navToggleButton').on('click', function(){ //this function still needs some help. Can't click on SVGs in FireFox or IE.
+      
+    $('#nav-links-overlay').fadeToggle(200, function(){
+      //callback to hide then fadeIn the content of the nav-links-overlay.
+    }); //end fadeToggle()
+    event.stopPropagation();
   }).children('object').bind('click', function(event){
+        
       console.log(event);
       console.log('dis shit getting clicked');
       $('#nav-links-overlay').fadeToggle(200, function(){
         //callback
       }); //end fadeToggle()
       event.stopPropagation();
+  }); //end on()
+  $('.pagenav li:nth-child(1)').on('click', function(){
+    //isn't this just a lovely little workaround? now the whole bar up top in the nav closes it.
+    $('#nav-links-overlay').fadeToggle(200, function(){
+        //callback
+    }); //end fadeToggle()
   }); //end on()
     
   $('.hyperlink').click(function() {
@@ -88,7 +90,7 @@ $(document).ready(function() {
       function newpage() {
           window.location = newLocation;
       }
-  });
+  }); //creating a fancy fadeOut effect whenever you navigate to a different page.
     
   var overlayArray = $('body').find('.project-overlay');
   var overlayArrayJr = overlayArray.children('.overlay-content');
